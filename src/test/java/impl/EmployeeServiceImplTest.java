@@ -30,6 +30,21 @@ class EmployeeServiceImplTest {
 
     //then
     assertEquals(2, sundayEmployees.size());
-    assertEquals("Mike", sundayEmployees.get(0).getName());
+    assertEquals("MIKE", sundayEmployees.get(0).getName());
   }
+
+  @Test
+  public void should_return_sorted_uppercase_employees_when_findSundayEmployees_given_employee_list() {
+    // given
+    EmployeeServiceImpl service = new EmployeeServiceImpl();
+
+    // when
+    List<Employee> employees = service.findSundayEmployees();
+
+    // then
+    assertEquals(2, employees.size());
+    assertEquals("MIKE", employees.get(0).getName());
+    assertEquals("SEPP", employees.get(1).getName());
+  }
+
 }
