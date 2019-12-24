@@ -7,9 +7,10 @@ import util.EmployeeComparator;
 
 public class EmployeeServiceImpl {
 
-  public List<Employee> findSundayEmployees(List<Employee> employees) {
-    List<Employee> sundayEmployees = employees.stream().filter(employee -> employee.getAge() >= 18).collect(Collectors.toList());
-    sundayEmployees.sort(new EmployeeComparator());
-    return sundayEmployees;
+  public List<Employee> findSundayEmployees() {
+    EmployeeDaoImpl employeeDao = new EmployeeDaoImpl();
+    List<Employee> employees = employeeDao.findAll();
+    return employees.stream().filter(employee -> employee.getAge() >= 18).sorted(new EmployeeComparator())
+        .collect(Collectors.toList());
   }
 }

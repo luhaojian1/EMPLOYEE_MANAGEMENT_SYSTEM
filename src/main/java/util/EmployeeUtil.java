@@ -14,7 +14,7 @@ public class EmployeeUtil {
     return employeeList;
   }
 
-  public static Employee createEmployee(String name, Integer age){
+  private static Employee createEmployee(String name, Integer age) {
     Employee employee = new Employee();
     employee.setName(name);
     employee.setAge(age);
