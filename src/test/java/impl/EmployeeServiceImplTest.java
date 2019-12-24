@@ -30,7 +30,7 @@ class EmployeeServiceImplTest {
 
     //then
     assertEquals(2, sundayEmployees.size());
-    assertEquals("MIKE", sundayEmployees.get(0).getName());
+    assertEquals("SEPP", sundayEmployees.get(0).getName());
   }
 
   @Test
@@ -43,8 +43,8 @@ class EmployeeServiceImplTest {
 
     // then
     assertEquals(2, employees.size());
-    assertEquals("MIKE", employees.get(0).getName());
-    assertEquals("SEPP", employees.get(1).getName());
+    assertEquals("SEPP", employees.get(0).getName());
+    assertEquals("MIKE", employees.get(1).getName());
   }
 
 }
