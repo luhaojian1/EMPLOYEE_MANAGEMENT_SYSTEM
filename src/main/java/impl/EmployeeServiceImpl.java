@@ -10,9 +10,6 @@ public class EmployeeServiceImpl {
     EmployeeDaoImpl employeeDao = new EmployeeDaoImpl();
     List<Employee> employees = employeeDao.findAll();
     return employees.stream().filter(employee -> employee.getAge() >= 18)
-            .sorted(Employee::compareTo).map(employee -> {
-              employee.setName(employee.getName().toUpperCase());
-              return employee;
-            }).collect(Collectors.toList());
+            .sorted(Employee::compareTo).peek(employee -> employee.setName(employee.getName().toUpperCase())).collect(Collectors.toList());
   }
 }
